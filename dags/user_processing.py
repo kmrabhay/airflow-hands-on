@@ -34,7 +34,7 @@ def _processing_user(ti):
 
 with DAG("user_processing", schedule_interval='@daily', 
              default_args=default_args,
-            catchup=False) as dag:
+            catchup=True) as dag:
 
         #Define the task/operator
         creating_table = SqliteOperator(
